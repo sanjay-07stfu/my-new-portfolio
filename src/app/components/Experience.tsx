@@ -8,36 +8,49 @@ export function Experience() {
 
   const experiences = [
     {
-      title: "Senior Full Stack Engineer",
-      company: "Tech Innovations Inc.",
-      period: "Jan 2023 - Present",
-      description: "Leading development of cloud-native applications, mentoring junior developers, and architecting scalable microservices. Implemented CI/CD pipelines reducing deployment time by 60%.",
-      technologies: ["React", "Node.js", "AWS", "Kubernetes", "GraphQL"],
-      achievements: ["60% faster deployments", "Led team of 5 developers", "99.9% uptime"],
+      title: "Cybersecurity Intern",
+      company: "Cyber Sankar – Remote",
+      period: "Jun 2025 – Aug 2025 (3 months)",
+      description:
+        "Successfully completed Industrial Cyber Domain Training with hands-on exposure to ethical hacking, bug bounty concepts, and practical security testing techniques.",
+      technologies: [
+        "Cybersecurity",
+        "Ethical Hacking",
+        "Web Vulnerability Analysis",
+        "Bug Bounty Fundamentals",
+      ],
+      achievements: [
+        "Industrial Cyber Domain Training completed",
+        "Practical web vulnerability analysis",
+        "Real-world attack scenario understanding",
+      ],
     },
     {
-      title: "Full Stack Developer",
-      company: "Digital Solutions LLC",
-      period: "Mar 2021 - Dec 2022",
-      description: "Developed and maintained multiple client-facing applications. Collaborated with cross-functional teams to deliver high-quality software solutions on time.",
-      technologies: ["React", "Python", "PostgreSQL", "Docker", "Redis"],
-      achievements: ["Delivered 15+ projects", "40% performance boost", "Client satisfaction: 98%"],
+      title: "Diploma in Computer Engineering",
+      company: "Vidyalankar Group of Educational Institutes",
+      period: "Aug 2023 – May 2026",
+      description:
+        "Focused on API integration, HTML, and core programming skills while actively participating in hackathons and volunteering activities.",
+      technologies: [
+        "API Integration",
+        "HTML",
+        "Programming Fundamentals",
+        "Team Collaboration",
+      ],
+      achievements: [
+        "Participant – Smart India Hackathon (SIH)",
+        "Participant – Industrial Hackathons",
+        "Built innovative solutions under time constraints",
+      ],
     },
     {
-      title: "Frontend Developer",
-      company: "Creative Web Studio",
-      period: "Jun 2019 - Feb 2021",
-      description: "Built responsive web applications with modern frameworks. Optimized application performance and improved user experience metrics by 40%.",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
-      achievements: ["40% UX improvement", "Built design system", "Mentored 3 interns"],
-    },
-    {
-      title: "Junior Developer",
-      company: "StartUp Ventures",
-      period: "Jan 2018 - May 2019",
-      description: "Contributed to various web development projects, learned best practices, and gained hands-on experience with modern development workflows.",
-      technologies: ["JavaScript", "HTML/CSS", "Node.js", "MongoDB"],
-      achievements: ["Contributed to 10+ projects", "Quick learner", "Team player"],
+      title: "SSC (10th – Maharashtra State Board)",
+      company: "Shree Ambeshwar Madhyamik Vidyalay, Amba",
+      period: "Completed",
+      description:
+        "Completed SSC with strong academic performance and actively participated in sports activities.",
+      technologies: ["Academic Fundamentals", "Discipline", "Team Spirit"],
+      achievements: ["Grade: 85.20%", "Active participation in Sports"],
     },
   ];
 
@@ -157,7 +170,7 @@ export function Experience() {
             }}
           />
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            My professional journey and the amazing companies I've worked with.
+            My internship and education journey with practical learning and achievements.
           </p>
         </motion.div>
 

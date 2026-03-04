@@ -1,6 +1,6 @@
 import { motion, useInView } from "motion/react";
 import { useRef, useState } from "react";
-import { Mail, MapPin, Send, Github, Linkedin, Twitter, CheckCircle2 } from "lucide-react";
+import { Mail, MapPin, Send, Github, Linkedin, CheckCircle2 } from "lucide-react";
 import { MagneticButton } from "./MagneticButton";
 
 export function Contact() {
@@ -39,19 +39,19 @@ export function Contact() {
     {
       name: "GitHub",
       icon: Github,
-      url: "https://github.com",
+      url: "https://github.com/sanjay-07stfu",
       color: "hover:text-purple-400",
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/sanjay-yedage-9a216934b/",
       color: "hover:text-blue-400",
     },
     {
-      name: "Twitter",
-      icon: Twitter,
-      url: "https://twitter.com",
+      name: "Email",
+      icon: Mail,
+      url: "mailto:yedagesanjay8@gmail.com",
       color: "hover:text-cyan-400",
     },
   ];
@@ -178,11 +178,11 @@ export function Contact() {
                     <div>
                       <p className="text-gray-400 text-sm mb-1">Email</p>
                       <motion.a
-                        href="mailto:your.email@example.com"
+                        href="mailto:yedagesanjay8@gmail.com"
                         className="text-white hover:text-purple-400 transition-colors"
                         whileHover={{ scale: 1.05 }}
                       >
-                        your.email@example.com
+                        yedagesanjay8@gmail.com
                       </motion.a>
                     </div>
                   </motion.div>
@@ -208,7 +208,7 @@ export function Contact() {
                     </motion.div>
                     <div>
                       <p className="text-gray-400 text-sm mb-1">Location</p>
-                      <p className="text-white">San Francisco, CA</p>
+                      <p className="text-white">Mumbai, Vile Parle</p>
                     </div>
                   </motion.div>
                 </div>

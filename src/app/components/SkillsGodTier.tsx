@@ -6,18 +6,21 @@ export function SkillsGodTier() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const skills = [
-    { name: "React", level: 95, icon: "⚛️", color: "#61dafb", category: "Frontend" },
-    { name: "TypeScript", level: 92, icon: "📘", color: "#3178c6", category: "Frontend" },
-    { name: "Next.js", level: 88, icon: "▲", color: "#000000", category: "Frontend" },
-    { name: "Tailwind", level: 94, icon: "🎨", color: "#06b6d4", category: "Frontend" },
-    { name: "Motion", level: 90, icon: "✨", color: "#a855f7", category: "Frontend" },
-    { name: "Node.js", level: 90, icon: "🟢", color: "#339933", category: "Backend" },
-    { name: "Python", level: 85, icon: "🐍", color: "#3776ab", category: "Backend" },
-    { name: "PostgreSQL", level: 82, icon: "🐘", color: "#4169e1", category: "Backend" },
-    { name: "MongoDB", level: 86, icon: "🍃", color: "#47a248", category: "Backend" },
-    { name: "Docker", level: 87, icon: "🐳", color: "#2496ed", category: "DevOps" },
-    { name: "AWS", level: 85, icon: "☁️", color: "#ff9900", category: "DevOps" },
-    { name: "Figma", level: 88, icon: "🎨", color: "#f24e1e", category: "Design" },
+    { name: "HTML/CSS", level: 95, icon: "🌐", color: "#0ea5e9", category: "Frontend" },
+    { name: "JavaScript", level: 85, icon: "⚡", color: "#f7df1e", category: "Frontend" },
+    { name: "React", level: 85, icon: "⚛️", color: "#61dafb", category: "Frontend" },
+    { name: "Tailwind CSS", level: 80, icon: "🎨", color: "#06b6d4", category: "Frontend" },
+    { name: "Vite", level: 75, icon: "⚡", color: "#a855f7", category: "Frontend" },
+    { name: "TensorFlow", level: 80, icon: "🧠", color: "#f59e0b", category: "AI/ML" },
+    { name: "Keras", level: 80, icon: "🔬", color: "#ef4444", category: "AI/ML" },
+    { name: "OpenCV", level: 75, icon: "👁️", color: "#10b981", category: "AI/ML" },
+    { name: "Python", level: 90, icon: "🐍", color: "#3776ab", category: "Backend" },
+    { name: "Flask", level: 80, icon: "🌶️", color: "#ef4444", category: "Backend" },
+    { name: "Node.js", level: 75, icon: "🟢", color: "#22c55e", category: "Backend" },
+    { name: "REST APIs", level: 80, icon: "🔌", color: "#3b82f6", category: "Backend" },
+    { name: "SQLite", level: 75, icon: "💾", color: "#6366f1", category: "Backend" },
+    { name: "C++", level: 75, icon: "⚙️", color: "#2563eb", category: "Tools & Others" },
+    { name: "Java", level: 70, icon: "☕", color: "#f97316", category: "Tools & Others" },
   ];
 
   return (
@@ -247,7 +250,7 @@ export function SkillsGodTier() {
 
         {/* Skill Categories Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {["Frontend", "Backend", "DevOps", "Design"].map((category, catIndex) => (
+          {["Frontend", "Backend", "AI/ML", "Tools & Others"].map((category, catIndex) => (
             <motion.div
               key={category}
               className="relative group"

@@ -9,7 +9,7 @@ import { ParallaxLayer } from "./ParallaxLayer";
 export function Hero() {
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
-  const fullText = "Full-Stack Developer & Creative Problem Solver";
+  const fullText = "Passionate Full-Stack Developer and AI/ML Engineer";
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -179,7 +179,7 @@ export function Hero() {
           transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
           className="text-6xl md:text-8xl font-bold mb-6"
         >
-          <GlitchText text="Your Name" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500" />
+          <GlitchText text="Sanjay Vitthal Yedage" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500" />
         </motion.h1>
 
         {/* Animated role text with typewriter */}
@@ -213,7 +213,7 @@ export function Hero() {
           transition={{ delay: 1, duration: 0.8 }}
           className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12"
         >
-          <TextScramble text="Building exceptional digital experiences with modern technologies and creative solutions. Passionate about clean code, beautiful design, and innovative problem-solving." />
+          <TextScramble text="Diploma Student in Computer Engineering | Future Tech Enthusiast | Learning & Building with AI/ML, Web Development, and Modern Technologies." />
         </motion.p>
 
         {/* CTA Buttons with liquid and magnetic effects */}
@@ -254,9 +254,9 @@ export function Hero() {
           className="flex gap-6 justify-center"
         >
           {[
-            { Icon: Github, href: "#", delay: 0, color: "hover:text-purple-400" },
-            { Icon: Linkedin, href: "#", delay: 0.1, color: "hover:text-blue-400" },
-            { Icon: Mail, href: "#", delay: 0.2, color: "hover:text-pink-400" },
+            { Icon: Github, href: "https://github.com/sanjay-07stfu", delay: 0, color: "hover:text-purple-400" },
+            { Icon: Linkedin, href: "https://www.linkedin.com/in/sanjay-yedage-9a216934b/", delay: 0.1, color: "hover:text-blue-400" },
+            { Icon: Mail, href: "mailto:yedagesanjay8@gmail.com", delay: 0.2, color: "hover:text-pink-400" },
           ].map(({ Icon, href, delay, color }, index) => (
             <motion.a
               key={index}

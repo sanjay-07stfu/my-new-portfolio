@@ -65,7 +65,7 @@ export function Footer() {
             transition={{ duration: 0.5 }}
             className="text-gray-400 text-sm flex items-center gap-2"
           >
-            © {currentYear} Your Name. Made with{" "}
+            © {currentYear} Sanjay Vitthal Yedage. Made with{" "}
             <motion.span
               animate={{
                 scale: [1, 1.3, 1],

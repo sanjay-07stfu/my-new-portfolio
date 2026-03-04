@@ -11,7 +11,7 @@ export function About() {
   useEffect(() => {
     if (!isInView) return;
 
-    const targets = { years: 5, projects: 50, clients: 15 };
+    const targets = { years: 3, projects: 6, clients: 0 };
     const duration = 2000;
     const steps = 60;
     const interval = duration / steps;
@@ -51,23 +51,23 @@ export function About() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6 },
     },
   };
 
   const skills = [
-    { name: "React", level: 95 },
-    { name: "TypeScript", level: 90 },
-    { name: "Node.js", level: 88 },
-    { name: "Python", level: 85 },
-    { name: "AWS", level: 82 },
-    { name: "Docker", level: 80 },
+    { name: "Python", level: 90 },
+    { name: "JavaScript/React", level: 85 },
+    { name: "TensorFlow/Keras", level: 80 },
+    { name: "HTML/CSS", level: 95 },
+    { name: "Node.js/Flask", level: 75 },
+    { name: "MongoDB/SQLite", level: 70 },
   ];
 
   const achievements = [
-    { icon: Award, text: "10+ Certifications", color: "from-yellow-500 to-orange-500" },
-    { icon: Users, text: "100K+ Users Served", color: "from-green-500 to-emerald-500" },
-    { icon: Coffee, text: "1000+ Cups of Coffee", color: "from-amber-500 to-brown-500" },
+    { icon: Award, text: "AI/ML Projects", color: "from-yellow-500 to-orange-500" },
+    { icon: Users, text: "Open Source", color: "from-green-500 to-emerald-500" },
+    { icon: Coffee, text: "Always Learning", color: "from-amber-500 to-brown-500" },
   ];
 
   return (
@@ -227,10 +227,10 @@ export function About() {
                   animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ delay: 0.5, duration: 1 }}
                 >
-                  I'm a passionate full-stack developer with 5+ years of
-                  experience building scalable web applications and AI-powered
-                  solutions. I specialize in modern JavaScript frameworks, cloud
-                  architecture, and machine learning integration.
+                  I'm a Diploma Student in Computer Engineering from Mumbai (Vile Parle),
+                  passionate about Full-Stack Development and AI/ML Engineering. With 3 years
+                  of coding experience, I build innovative solutions using Python, React, TensorFlow,
+                  and modern web technologies.
                 </motion.p>
 
                 <motion.p
@@ -239,9 +239,9 @@ export function About() {
                   animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ delay: 0.7, duration: 1 }}
                 >
-                  My approach combines technical expertise with creative
-                  problem-solving, delivering solutions that are not only
-                  functional but also elegant and user-friendly.
+                  As a Future Tech Enthusiast, I'm constantly learning and building projects
+                  ranging from AI-powered disease detection systems to voice assistants and
+                  full-stack web applications.
                 </motion.p>
 
                 {/* Animated Stats */}

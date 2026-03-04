@@ -7,6 +7,8 @@ interface Project {
   description: string;
   tags: string[];
   color: string;
+  github: string;
+  demo: string;
 }
 
 function ProjectCard3D({ project, index }: { project: Project; index: number }) {
@@ -41,12 +43,8 @@ function ProjectCard3D({ project, index }: { project: Project; index: number }) 
     <motion.div
       ref={cardRef}
       className="relative group"
-      style={{
-        transformStyle: "preserve-3d",
-        perspective: 1000,
-      }}
-      initial={{ opacity: 0, z: -200 }}
-      whileInView={{ opacity: 1, z: 0 }}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{
         duration: 0.8,
@@ -54,16 +52,12 @@ function ProjectCard3D({ project, index }: { project: Project; index: number }) 
         type: "spring",
         stiffness: 100,
       }}
-      onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={handleMouseLeave}
     >
       <motion.div
         className="relative h-full rounded-3xl overflow-hidden"
         style={{
-          rotateX,
-          rotateY,
-          transformStyle: "preserve-3d",
           background: "rgba(255,255,255,0.02)",
           backdropFilter: "blur(20px)",
           border: "1px solid rgba(255,255,255,0.1)",
@@ -81,7 +75,7 @@ function ProjectCard3D({ project, index }: { project: Project; index: number }) 
       >
         {/* Animated Background Gradient */}
         <motion.div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
             background: `linear-gradient(135deg, ${project.color}, transparent)`,
           }}
@@ -94,7 +88,7 @@ function ProjectCard3D({ project, index }: { project: Project; index: number }) 
 
         {/* Shine Effect */}
         <motion.div
-          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
           style={{
             background: `linear-gradient(135deg, transparent, ${project.color}30, transparent)`,
           }}
@@ -109,18 +103,13 @@ function ProjectCard3D({ project, index }: { project: Project; index: number }) 
         />
 
         {/* 3D Layers */}
-        <motion.div
-          className="p-8 relative z-10"
-          style={{
-            transform: "translateZ(50px)",
-          }}
-        >
+        <motion.div className="p-8 relative z-10">
           {/* Floating Particles */}
           {isHovering &&
             [...Array(10)].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute w-2 h-2 rounded-full"
+                className="absolute w-2 h-2 rounded-full pointer-events-none"
                 style={{
                   background: project.color,
                   left: `${Math.random() * 100}%`,
@@ -142,9 +131,7 @@ function ProjectCard3D({ project, index }: { project: Project; index: number }) 
           {/* Project Number */}
           <motion.div
             className="absolute -top-6 -left-6 w-20 h-20"
-            style={{
-              transform: "translateZ(75px)",
-            }}
+            style={{ pointerEvents: "none" }}
           >
             <motion.div
               className="w-full h-full rounded-full flex items-center justify-center font-black text-4xl"
@@ -168,9 +155,6 @@ function ProjectCard3D({ project, index }: { project: Project; index: number }) 
           {/* Title with Letter Animation */}
           <motion.h3
             className="text-3xl font-bold mb-4 text-white"
-            style={{
-              transform: "translateZ(60px)",
-            }}
           >
             {project.title.split("").map((char, i) => (
               <motion.span
@@ -190,9 +174,6 @@ function ProjectCard3D({ project, index }: { project: Project; index: number }) 
           {/* Description */}
           <motion.p
             className="text-gray-400 mb-6 leading-relaxed"
-            style={{
-              transform: "translateZ(55px)",
-            }}
           >
             {project.description}
           </motion.p>
@@ -200,9 +181,6 @@ function ProjectCard3D({ project, index }: { project: Project; index: number }) 
           {/* Tags */}
           <motion.div
             className="flex flex-wrap gap-2 mb-6"
-            style={{
-              transform: "translateZ(50px)",
-            }}
           >
             {project.tags.map((tag, i) => (
               <motion.span
@@ -231,40 +209,27 @@ function ProjectCard3D({ project, index }: { project: Project; index: number }) 
             ))}
           </motion.div>
 
-          {/* Action Buttons */}
-          <motion.div
-            className="flex gap-4"
-            style={{
-              transform: "translateZ(70px)",
-            }}
-          >
-            {[
-              { Icon: ExternalLink, label: "Live Demo" },
-              { Icon: Github, label: "Code" },
-            ].map(({ Icon, label }, i) => (
-              <motion.button
-                key={i}
-                className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold relative overflow-hidden group/btn"
-                style={{
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <motion.div
-                  className="absolute inset-0"
-                  style={{
-                    background: project.color,
-                    opacity: 0,
-                  }}
-                  whileHover={{ opacity: 0.2 }}
-                />
-                <Icon className="w-4 h-4 relative z-10" />
-                <span className="relative z-10">{label}</span>
-              </motion.button>
-            ))}
-          </motion.div>
+          {/* Action Buttons - Simple without animations */}
+          <div className="flex gap-4 mt-6">
+            <a
+              href={project.demo || project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-colors"
+            >
+              <ExternalLink className="w-4 h-4" />
+              <span>Live Demo</span>
+            </a>
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-colors"
+            >
+              <Github className="w-4 h-4" />
+              <span>Code</span>
+            </a>
+          </div>
         </motion.div>
 
         {/* Corner Accents */}
@@ -276,9 +241,9 @@ function ProjectCard3D({ project, index }: { project: Project; index: number }) 
         ].map((pos, i) => (
           <motion.div
             key={i}
-            className={`absolute ${pos.corner} w-8 h-8`}
+            className={`absolute ${pos.corner} w-8 h-8 pointer-events-none`}
             style={{
-              transform: `rotate(${pos.rotate}deg) translateZ(30px)`,
+              transform: `rotate(${pos.rotate}deg)`,
             }}
             animate={{
               opacity: isHovering ? 1 : 0.3,
@@ -305,46 +270,58 @@ function ProjectCard3D({ project, index }: { project: Project; index: number }) 
 export function ProjectsGodTier() {
   const projects: Project[] = [
     {
-      title: "AI Dashboard",
+      title: "Crop Leaf Disease Detection AI",
       description:
-        "A cutting-edge analytics platform powered by machine learning, featuring real-time data visualization and predictive insights.",
-      tags: ["React", "TypeScript", "TensorFlow", "D3.js"],
-      color: "#a855f7",
-    },
-    {
-      title: "E-Commerce Platform",
-      description:
-        "Full-stack shopping experience with advanced filtering, real-time inventory, and seamless payment integration.",
-      tags: ["Next.js", "Stripe", "PostgreSQL", "Redis"],
-      color: "#3b82f6",
-    },
-    {
-      title: "Social Network",
-      description:
-        "Modern social platform with real-time messaging, media sharing, and AI-powered content recommendations.",
-      tags: ["React Native", "GraphQL", "WebSockets", "AWS"],
-      color: "#ec4899",
-    },
-    {
-      title: "Design System",
-      description:
-        "Comprehensive component library with accessibility features, theming support, and extensive documentation.",
-      tags: ["Storybook", "Tailwind", "TypeScript", "Figma"],
-      color: "#f59e0b",
-    },
-    {
-      title: "Blockchain Explorer",
-      description:
-        "Decentralized application for exploring blockchain transactions with real-time updates and analytics.",
-      tags: ["Web3", "Ethereum", "React", "Node.js"],
+        "AI-based web application that detects plant leaf diseases using CNN and image processing. Users can upload leaf images and get instant disease prediction with accuracy scores.",
+      tags: ["Python", "TensorFlow", "Keras", "OpenCV", "Flask"],
       color: "#10b981",
+      github: "https://github.com/sanjay-07stfu/CropDetect-Al",
+      demo: "https://github.com/sanjay-07stfu/CropDetect-Al",
     },
     {
-      title: "Video Platform",
+      title: "Modern Portfolio Website",
       description:
-        "Streaming service with adaptive bitrate, live chat, and content recommendation engine.",
-      tags: ["WebRTC", "FFmpeg", "MongoDB", "Express"],
+        "Personal portfolio showcasing projects, skills, and experience with stunning animations and modern UI design. Built with React and cutting-edge web technologies.",
+      tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Motion"],
+      color: "#a855f7",
+      github: "https://github.com/sanjay-07stfu/my-new-portfolio",
+      demo: "https://github.com/sanjay-07stfu/my-new-portfolio",
+    },
+    {
+      title: "Amazon Clone - Frontend UI",
+      description:
+        "Static clone of Amazon homepage with responsive design. Replicates layout, navigation, product sections, banners, and footer using pure HTML and CSS.",
+      tags: ["HTML5", "CSS3"],
+      color: "#3b82f6",
+      github: "https://github.com/sanjay-07stfu/Amazon-clone-project",
+      demo: "https://github.com/sanjay-07stfu/Amazon-clone-project",
+    },
+    {
+      title: "Voice Bot AI Assistant",
+      description:
+        "Intelligent voice assistant that listens to user commands and responds with NLP. Integrates speech recognition and text-to-speech for interactive user experience.",
+      tags: ["Python", "Speech Recognition", "NLP", "Text-to-Speech"],
+      color: "#ec4899",
+      github: "https://github.com/sanjay-07stfu/VoiceBot-AI",
+      demo: "https://github.com/sanjay-07stfu/VoiceBot-AI",
+    },
+    {
+      title: "Translator.py",
+      description:
+        "Real-time language translation application that converts text between multiple languages using translation APIs. Supports practical language processing and conversion.",
+      tags: ["Python", "Translation API"],
+      color: "#f59e0b",
+      github: "https://github.com/sanjay-07stfu/Translator.py",
+      demo: "https://github.com/sanjay-07stfu/Translator.py",
+    },
+    {
+      title: "FitMart E-Commerce Platform",
+      description:
+        "Online fitness store with product catalog, ratings, and delivery tracking. Features include user authentication, shopping cart, and order management.",
+      tags: ["HTML", "CSS", "JavaScript", "Flask", "SQLite"],
       color: "#ef4444",
+      github: "https://github.com/yedagesanjay8/fitmart-ecommerce",
+      demo: "https://github.com/yedagesanjay8/fitmart-ecommerce",
     },
   ];
 

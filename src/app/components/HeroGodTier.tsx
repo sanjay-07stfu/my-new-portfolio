@@ -219,7 +219,7 @@ export function HeroGodTier() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            {["J", "O", "H", "N", " ", "D", "O", "E"].map((letter, i) => (
+            {["S", "A", "N", "J", "A", "Y", " ", "Y", "E", "D", "A", "G", "E"].map((letter, i) => (
               <motion.span
                 key={i}
                 className="inline-block"
@@ -266,7 +266,7 @@ export function HeroGodTier() {
               }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              JOHN DOE
+              SANJAY YEDAGE
             </motion.span>
           </motion.h1>
         </motion.div>
@@ -279,7 +279,7 @@ export function HeroGodTier() {
           className="mb-8"
         >
           <SplitTextReveal
-            text="Full-Stack Developer & Creative Visionary"
+            text="Full-Stack Developer & AI/ML Engineer"
             className="text-2xl md:text-4xl text-gray-300 font-light"
           />
         </motion.div>
@@ -309,8 +309,8 @@ export function HeroGodTier() {
               }}
               transition={{ duration: 10, repeat: Infinity }}
             />
-            Crafting pixel-perfect experiences with cutting-edge technologies. Transforming complex
-            problems into elegant solutions that make an impact.
+            Diploma Computer Engineering student at Vidyalankar Polytechnic, building practical full-stack and AI/ML
+            projects that solve real-world problems with clean, modern user experiences.
           </motion.p>
         </motion.div>
 
@@ -326,15 +326,18 @@ export function HeroGodTier() {
               text: "View My Work",
               Icon: ArrowRight,
               primary: true,
+              href: "#projects",
             },
             {
               text: "Download CV",
               Icon: Download,
               primary: false,
+              href: "mailto:yedagesanjay8@gmail.com?subject=Resume%20Request",
             },
           ].map((button, i) => (
-            <motion.button
+            <motion.a
               key={i}
+              href={button.href}
               className={`group relative px-8 py-4 rounded-full font-semibold flex items-center gap-3 overflow-hidden ${
                 button.primary ? "text-white" : "text-gray-300"
               }`}
@@ -416,7 +419,7 @@ export function HeroGodTier() {
               >
                 <button.Icon className="w-5 h-5" />
               </motion.div>
-            </motion.button>
+            </motion.a>
           ))}
         </motion.div>
 
@@ -428,13 +431,15 @@ export function HeroGodTier() {
           className="flex gap-6 justify-center"
         >
           {[
-            { Icon: Github, href: "#", color: "#a855f7" },
-            { Icon: Linkedin, href: "#", color: "#3b82f6" },
-            { Icon: Mail, href: "#", color: "#ec4899" },
+            { Icon: Github, href: "https://github.com/sanjay-07stfu", color: "#a855f7" },
+            { Icon: Linkedin, href: "https://www.linkedin.com/in/sanjay-yedage-9a216934b/", color: "#3b82f6" },
+            { Icon: Mail, href: "mailto:yedagesanjay8@gmail.com", color: "#ec4899" },
           ].map(({ Icon, href, color }, index) => (
             <motion.a
               key={index}
               href={href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative group"
               style={{
                 transformStyle: "preserve-3d",
