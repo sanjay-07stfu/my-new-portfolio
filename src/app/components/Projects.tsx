@@ -75,7 +75,7 @@ export function Projects() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6 },
     },
   };
 
@@ -108,7 +108,6 @@ export function Projects() {
           transition={{
             duration: 18,
             repeat: Infinity,
-            ease: "easeInOut",
           }}
         />
       </div>
@@ -130,12 +129,10 @@ export function Projects() {
                 "linear-gradient(90deg, #fff 0%, #fff 100%)",
               ],
               backgroundClip: ["text", "text", "text"],
-              WebkitBackgroundClip: ["text", "text", "text"],
             }}
             transition={{
               duration: 4,
               repeat: Infinity,
-              ease: "linear",
             }}
           >
             Featured Projects

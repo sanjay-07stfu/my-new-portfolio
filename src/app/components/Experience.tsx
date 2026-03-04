@@ -69,7 +69,7 @@ export function Experience() {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6 },
     },
   };
 
@@ -91,7 +91,6 @@ export function Experience() {
           transition={{
             duration: 20,
             repeat: Infinity,
-            ease: "easeInOut",
           }}
         />
         <motion.div 
@@ -186,7 +185,7 @@ export function Experience() {
             className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-blue-500 to-purple-500"
             initial={{ scaleY: 0 }}
             animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
-            transition={{ duration: 2, ease: "easeInOut" }}
+            transition={{ duration: 2 }}
             style={{ transformOrigin: "top" }}
           />
 
