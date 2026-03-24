@@ -278,6 +278,15 @@ export function ProjectsGodTier() {
       github: "https://github.com/sanjay-07stfu/CropDetect-Al",
       demo: "https://github.com/sanjay-07stfu/CropDetect-Al",
     },
+     {
+      title: "HabitFlow - Habit Tracking App",
+      description:
+        "A full-stack habit tracking application that helps users build and maintain positive habits. Features include daily habit logging, progress tracking, achievement streaks, and motivational insights for personal growth.",
+      tags: ["React", "Vite", "Tailwind CSS", "Firebase", "JavaScript"],
+      color: "#06b6d4",
+      github: "https://github.com/sanjay-07stfu/Fullstack-web-development/tree/main/micro%20project",
+      demo: "https://habitflow-app-26563.web.app/",
+    },
     {
       title: "Modern Portfolio Website",
       description:
@@ -323,6 +332,7 @@ export function ProjectsGodTier() {
       github: "https://github.com/yedagesanjay8/fitmart-ecommerce",
       demo: "https://github.com/yedagesanjay8/fitmart-ecommerce",
     },
+   
   ];
 
   return (

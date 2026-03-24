@@ -24,7 +24,7 @@ export function Projects() {
       image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
       tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "Motion"],
       github: "https://github.com/sanjay-07stfu/portfolio",
-      demo: "#",
+      demo: "https://sanjay-07stfu.github.io/my-new-portfolio/",
     },
     {
       title: "Amazon Clone – Frontend UI",
@@ -55,8 +55,16 @@ export function Projects() {
       description: "Online store for fitness products including supplements, gym gear, and yoga mats with product catalog, ratings, and delivery tracking features.",
       image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
       tech: ["HTML", "CSS", "JavaScript", "Flask", "SQLite"],
-      github: "https://github.com/yedagesanjay8/fitmart-ecommerce",
+      github: "https://github.com/sanjay-07stfu/FitMart",
       demo: "",
+    },
+    {
+      title: "HabitFlow - Habit Tracking App",
+      description: "A full-stack habit tracking application that helps users build and maintain positive habits. Features include daily habit logging, progress tracking, achievement streaks, and motivational insights for personal growth.",
+      image: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+      tech: ["React", "Vite", "Tailwind CSS", "Firebase", "JavaScript"],
+      github: "https://github.com/sanjay-07stfu/Fullstack-web-development/tree/main/micro%20project",
+      demo: "https://habitflow-app-26563.web.app/",
     },
   ];
 
