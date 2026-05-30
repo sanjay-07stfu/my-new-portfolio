@@ -332,12 +332,15 @@ export function HeroGodTier() {
               text: "Download CV",
               Icon: Download,
               primary: false,
-              href: "mailto:yedagesanjay8@gmail.com?subject=Resume%20Request",
+              href: "/Professional%20resume.pdf",
             },
           ].map((button, i) => (
             <motion.a
               key={i}
               href={button.href}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
               className={`group relative px-8 py-4 rounded-full font-semibold flex items-center gap-3 overflow-hidden ${
                 button.primary ? "text-white" : "text-gray-300"
               }`}

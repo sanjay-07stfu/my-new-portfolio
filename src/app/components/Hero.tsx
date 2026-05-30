@@ -240,7 +240,17 @@ export function Hero() {
             </motion.div>
           </MagneticButton>
 
-          <MagneticButton className="group px-8 py-4 bg-white/5 backdrop-blur-sm border-2 border-white/10 rounded-full text-white font-semibold flex items-center gap-2 hover:bg-white/10 hover:border-purple-500/50 transition-all">
+          <MagneticButton
+            className="group px-8 py-4 bg-white/5 backdrop-blur-sm border-2 border-white/10 rounded-full text-white font-semibold flex items-center gap-2 hover:bg-white/10 hover:border-purple-500/50 transition-all"
+            onClick={() => {
+              const a = document.createElement("a");
+              a.href = "/Professional%20resume.pdf";
+              a.download = "Sanjay_Vitthal_Yedage_Resume.pdf";
+              document.body.appendChild(a);
+              a.click();
+              a.remove();
+            }}
+          >
             <Download className="w-5 h-5" />
             <span>Download CV</span>
           </MagneticButton>
