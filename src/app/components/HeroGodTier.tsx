@@ -3,6 +3,8 @@ import { ArrowRight, Github, Linkedin, Mail, Sparkles, Download, Code2, Zap } fr
 import { useState, useEffect, useRef } from "react";
 import { SplitTextReveal } from "./SplitTextReveal";
 
+const resumeUrl = new URL("../../../Professional resume.pdf", import.meta.url).href;
+
 export function HeroGodTier() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -332,15 +334,14 @@ export function HeroGodTier() {
               text: "Download CV",
               Icon: Download,
               primary: false,
-              href: "/Professional%20resume.pdf",
+              href: resumeUrl,
+              download: "Sanjay_Vitthal_Yedage_Resume.pdf",
             },
           ].map((button, i) => (
             <motion.a
               key={i}
               href={button.href}
-              download
-              target="_blank"
-              rel="noopener noreferrer"
+              download={button.download}
               className={`group relative px-8 py-4 rounded-full font-semibold flex items-center gap-3 overflow-hidden ${
                 button.primary ? "text-white" : "text-gray-300"
               }`}
