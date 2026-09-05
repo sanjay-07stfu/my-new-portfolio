@@ -11,7 +11,7 @@ export function About() {
   useEffect(() => {
     if (!isInView) return;
 
-    const targets = { years: 3, projects: 6, clients: 0 };
+    const targets = { years: 4, projects: 7, clients: 0 };
     const duration = 2000;
     const steps = 60;
     const interval = duration / steps;
@@ -227,8 +227,8 @@ export function About() {
                   animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ delay: 0.5, duration: 1 }}
                 >
-                  I'm a Diploma Student in Computer Engineering from Mumbai (Vile Parle),
-                  passionate about Full-Stack Development and AI/ML Engineering. With 3 years
+                  I'm a Degree Student in IT Engineering from Mumbai (Vile Parle),
+                  passionate about Full-Stack Development and AI/ML Engineering. With 4 years
                   of coding experience, I build innovative solutions using Python, React, TensorFlow,
                   and modern web technologies.
                 </motion.p>

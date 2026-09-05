@@ -311,7 +311,7 @@ export function HeroGodTier() {
               }}
               transition={{ duration: 10, repeat: Infinity }}
             />
-            Diploma Computer Engineering student at Vidyalankar Polytechnic, building practical full-stack and AI/ML
+            Degree in IT Engineer student at Atharva College, building practical full-stack and AI/ML
             projects that solve real-world problems with clean, modern user experiences.
           </motion.p>
         </motion.div>

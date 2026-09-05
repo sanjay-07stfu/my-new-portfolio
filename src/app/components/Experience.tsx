@@ -7,6 +7,27 @@ export function Experience() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const experiences = [
+     {
+      title: "Degree in IT Engineer",
+      company: "Atharva College",
+      period: "Aug 2026 – May 2028",
+      description:
+        "Focused on API integration, Ai/Ml, and core programming skills while actively participating in hackathons and volunteering activities.",
+      technologies: [
+        "API Integration",
+        "HTML",
+        "Programming Fundamentals",
+        "Team Collaboration",
+        "Machine Learning",
+        "Ai Integration",
+        "Backend Development",
+      ],
+      achievements: [
+        "Participant – Smart India Hackathon (SIH)",
+        "Participant – Industrial Hackathons",
+        "Built innovative solutions under time constraints",
+      ],
+    },
     {
       title: "Cybersecurity Intern",
       company: "Cyber Sankar – Remote",
